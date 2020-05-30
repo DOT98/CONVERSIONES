@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newpackage;
+package Working;
 
 /**
  *
@@ -49,29 +49,31 @@ public class tutorial extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("TUTORIAL");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 50, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 300, 20));
 
         jButton1.setText("Ejercicios");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("Las unidades de medida \nse utilizan para conocer \nla longitud la distancia \no el tamaño de algun\nobjeto, por lo que es \nimportante saber convertir \nestas unidades de medida \npara conocer el valor\nque se obtiene en caso de \nrequerir alguna medida \nen particular\nhay que recordar que:\n\n1km = 1000 m\n1m = 100 cm\n1cm = 0.1 dm\n1dm = 100 mm");
+        jTextArea1.setToolTipText("");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 280));
 
         jButton2.setText("Convertir");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
 
         jButton3.setText("Convertir");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, 20));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, -1, 20));
 
         jButton4.setText("Convertir");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, -1));
 
         jButton5.setText("Convertir");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
 
         jTextField1.setText("KM");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +81,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 60, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 60, -1));
 
         jTextField2.setText("M");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +89,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 60, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 60, -1));
 
         jTextField4.setText("CM");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +97,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 60, -1));
 
         jTextField3.setText("M");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +105,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 60, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 60, -1));
 
         jTextField5.setText("CM");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +113,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 180, 60, -1));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 60, -1));
 
         jTextField6.setText("DM");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +121,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 60, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 60, -1));
 
         jTextField7.setText("DM");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +129,7 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 60, -1));
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 60, -1));
 
         jTextField8.setText("MM");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
@@ -135,10 +137,10 @@ public class tutorial extends javax.swing.JFrame {
                 jTextField8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 60, -1));
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 60, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/newpackage/tutorial.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 340));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Working/tutorial.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

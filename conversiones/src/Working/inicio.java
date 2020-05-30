@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newpackage;
+package Working;
 
 /**
  *
@@ -28,8 +28,8 @@ public class inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_Tutorial = new javax.swing.JButton();
+        btn_Ejercicios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,17 +38,33 @@ public class inicio extends javax.swing.JFrame {
         jLabel2.setText("CONVERSION DE UNIDADES DE MEDIDA");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jButton1.setText("TUTORIAL");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, -1, -1));
+        btn_Tutorial.setText("TUTORIAL");
+        btn_Tutorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TutorialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Tutorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
-        jButton2.setText("EJERCICIOS");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\danie\\Documents\\NetBeansProjects\\conversiones\\nbproject\\portada.jpg")); // NOI18N
+        btn_Ejercicios.setText("EJERCICIOS");
+        btn_Ejercicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EjerciciosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Ejercicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_EjerciciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EjerciciosActionPerformed
+        
+    }//GEN-LAST:event_btn_EjerciciosActionPerformed
+
+    private void btn_TutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TutorialActionPerformed
+        
+    }//GEN-LAST:event_btn_TutorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,8 +102,8 @@ public class inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_Ejercicios;
+    private javax.swing.JButton btn_Tutorial;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
