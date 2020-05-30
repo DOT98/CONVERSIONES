@@ -68,13 +68,25 @@ public class ejercicios extends javax.swing.JFrame {
         getContentPane().add(btn_sig, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 70, 40));
 
         btn_salir.setText("Atras");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 70, 40));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Working/ejercicios.jpg"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 380));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        inicio acc = new inicio();
+        acc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments

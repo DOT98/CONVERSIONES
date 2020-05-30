@@ -33,6 +33,7 @@ public class inicio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -60,14 +61,19 @@ public class inicio extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_EjerciciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EjerciciosActionPerformed
-        
+        ejercicios acc = new ejercicios();
+        acc.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_EjerciciosActionPerformed
 
     private void btn_TutorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TutorialActionPerformed
-        
+        tutorial acc = new tutorial();
+        acc.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_TutorialActionPerformed
 
     /**
