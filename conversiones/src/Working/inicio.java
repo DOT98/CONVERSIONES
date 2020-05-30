@@ -35,8 +35,10 @@ public class inicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("CONVERSION DE UNIDADES DE MEDIDA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         btn_Tutorial.setText("TUTORIAL");
         btn_Tutorial.addActionListener(new java.awt.event.ActionListener() {
@@ -44,7 +46,7 @@ public class inicio extends javax.swing.JFrame {
                 btn_TutorialActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_Tutorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        getContentPane().add(btn_Tutorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
         btn_Ejercicios.setText("EJERCICIOS");
         btn_Ejercicios.addActionListener(new java.awt.event.ActionListener() {
@@ -52,8 +54,10 @@ public class inicio extends javax.swing.JFrame {
                 btn_EjerciciosActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_Ejercicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 230));
+        getContentPane().add(btn_Ejercicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Working/inicio.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

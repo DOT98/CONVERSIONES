@@ -35,6 +35,7 @@ public class tutorial extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -64,16 +65,19 @@ public class tutorial extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 280));
 
         jButton2.setText("Convertir");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, -1, 40));
 
         jButton3.setText("Convertir");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, -1, 20));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, -1, 40));
 
         jButton4.setText("Convertir");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 172, -1, 40));
 
         jButton5.setText("Convertir");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 222, -1, 40));
+
+        jButton6.setText("Inicio");
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
 
         jTextField1.setText("KM");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +223,7 @@ public class tutorial extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
