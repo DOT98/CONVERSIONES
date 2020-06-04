@@ -14,6 +14,9 @@ import javax.swing.JOptionPane;
 public class ejercicios extends javax.swing.JFrame {
 
     String[] medidas = {"KM", "M", "CM", "MM"};
+    int resCorrect;
+    int resIncorrect;
+    int contador;
 
     
     /**
@@ -21,12 +24,14 @@ public class ejercicios extends javax.swing.JFrame {
      */
     public ejercicios() {
         initComponents();
+        setValues();
     }
     
     public void setValues(){               
         medidaIzq.setText(""+medidas[getRandom(0,3)]);
         medidaDer.setText(""+medidas[getRandom(0,3)]);
         Numbrs.setText(""+getRandom(3, 86));
+        contador++;
     }    
     
     /**
@@ -41,7 +46,7 @@ public class ejercicios extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         medidaDer = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jT_result = new javax.swing.JTextField();
         Numbrs = new javax.swing.JLabel();
         medidaIzq = new javax.swing.JLabel();
         btn_sig = new javax.swing.JButton();
@@ -66,7 +71,7 @@ public class ejercicios extends javax.swing.JFrame {
         medidaDer.setForeground(new java.awt.Color(255, 255, 255));
         medidaDer.setText("cm");
         getContentPane().add(medidaDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 40, 20));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 80, -1));
+        getContentPane().add(jT_result, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 80, -1));
 
         Numbrs.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         Numbrs.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -112,6 +117,17 @@ public class ejercicios extends javax.swing.JFrame {
 
     private void btn_sigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sigActionPerformed
         setValues();
+        Successes();
+        System.out.println(getResult());
+        jT_result.setText("");
+        jT_result.requestFocus();
+        
+        
+        
+        if (contador == 11) {
+            
+        }
+        
     }//GEN-LAST:event_btn_sigActionPerformed
     
     public double getResult(){
@@ -269,6 +285,16 @@ public class ejercicios extends javax.swing.JFrame {
         });
     }
     
+    public void Successes(){
+        double kid_result = Double.parseDouble(jT_result.getText());
+        
+        if (kid_result == getResult()) {
+            resCorrect++;
+        }else if (kid_result != getResult()) {
+            resIncorrect++;
+        }
+    }
+    
     public static int getRandom(int min, int max){        
         return (int) (Math.random()*((max-min)+1))+min;
     }
@@ -281,7 +307,7 @@ public class ejercicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jT_Indications;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jT_result;
     private javax.swing.JLabel medidaDer;
     private javax.swing.JLabel medidaIzq;
     // End of variables declaration//GEN-END:variables
