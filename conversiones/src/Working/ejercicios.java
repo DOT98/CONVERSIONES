@@ -14,9 +14,9 @@ import javax.swing.JOptionPane;
 public class ejercicios extends javax.swing.JFrame {
 
     String[] medidas = {"KM", "M", "CM", "MM"};
-    int resCorrect;
-    int resIncorrect;
-    int contador;
+    int resCorrect = 0;
+    int resIncorrect = 0;
+    int contador = 0;
 
     
     /**
@@ -124,8 +124,11 @@ public class ejercicios extends javax.swing.JFrame {
         
         
         
-        if (contador == 11) {
-            
+        if (contador == 5) {
+            Resultado ab = new Resultado(resCorrect, resIncorrect);
+            ab.setResult_ext(resCorrect, resIncorrect);
+            ab.show();
+            this.dispose();
         }
         
     }//GEN-LAST:event_btn_sigActionPerformed

@@ -18,12 +18,16 @@ public class Resultado extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Resultado(int correct, int incorrect){                
+    public Resultado(int correct, int incorrect){   
+        initComponents();
         this.correct = correct;
-        this.incorrect = incorrect;
+        this.incorrect = incorrect;        
     }
 
-    
+    public void setResult_ext(int co, int inco){
+        Correctas.setText("Correctas: " + correct);
+        Incorrectas.setText("Incorrectas: "+incorrect);
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,16 +38,16 @@ public class Resultado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        Correctas = new javax.swing.JLabel();
+        Incorrectas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("jLabel1");
+        Correctas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Correctas.setText("jLabel1");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel2.setText("jLabel2");
+        Incorrectas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Incorrectas.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,17 +56,17 @@ public class Resultado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(238, 238, 238)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(Incorrectas)
+                    .addComponent(Correctas))
                 .addContainerGap(306, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addComponent(jLabel1)
+                .addComponent(Correctas)
                 .addGap(49, 49, 49)
-                .addComponent(jLabel2)
+                .addComponent(Incorrectas)
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
@@ -105,7 +109,7 @@ public class Resultado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel Correctas;
+    private javax.swing.JLabel Incorrectas;
     // End of variables declaration//GEN-END:variables
 }
