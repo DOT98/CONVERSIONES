@@ -5,19 +5,30 @@
  */
 package Working;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author danie
  */
 public class ejercicios extends javax.swing.JFrame {
 
+    String[] medidas = {"KM", "M", "CM", "MM"};
+
+    
     /**
      * Creates new form ejercicios
      */
     public ejercicios() {
         initComponents();
     }
-
+    
+    public void setValues(){               
+        medidaIzq.setText(""+medidas[getRandom(0,3)]);
+        medidaDer.setText(""+medidas[getRandom(0,3)]);
+        Numbrs.setText(""+getRandom(3, 86));
+    }    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,12 +40,13 @@ public class ejercicios extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        medidaDer = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Numbrs = new javax.swing.JLabel();
+        medidaIzq = new javax.swing.JLabel();
         btn_sig = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
+        jT_Indications = new javax.swing.JTextField();
         FONDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,28 +55,34 @@ public class ejercicios extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("=");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 30, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Realiza la conversion de:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 280, 40));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("cm");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 40, 20));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 80, -1));
+        medidaDer.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        medidaDer.setForeground(new java.awt.Color(255, 255, 255));
+        medidaDer.setText("cm");
+        getContentPane().add(medidaDer, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 40, 20));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 80, -1));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel6.setText("100");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 60, 50));
+        Numbrs.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Numbrs.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Numbrs.setText("100");
+        getContentPane().add(Numbrs, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, 40));
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel7.setText("km");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
+        medidaIzq.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        medidaIzq.setText("km");
+        getContentPane().add(medidaIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, 40));
 
         btn_sig.setText("Sig");
+        btn_sig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sigActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_sig, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 70, 40));
 
         btn_salir.setText("Atras");
@@ -74,6 +92,10 @@ public class ejercicios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 70, 40));
+
+        jT_Indications.setEditable(false);
+        jT_Indications.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(jT_Indications, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 390, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Working/ejercicios.jpg"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 380));
@@ -88,6 +110,130 @@ public class ejercicios extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
 
+    private void btn_sigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sigActionPerformed
+        setValues();
+    }//GEN-LAST:event_btn_sigActionPerformed
+    
+    public double getResult(){
+        double r;
+        String b = medidaDer.getText();
+        
+        switch (medidaIzq.getText()) {
+            case "KM"://KM
+                switch (b) {
+                    case "KM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        break;
+                    case "M":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 1000;
+                        
+                        jT_Indications.setText("multiplica el valor de longitud por 1000");
+                        break;
+                    case "CM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 100000;
+                        
+                        jT_Indications.setText("multiplica el valor de longitud por 100000");
+                        break;
+                    case "MM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 1000000;
+                        
+                        jT_Indications.setText("multiplica el valor de longitud por 1000000");
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                break;
+            case "M"://M
+                switch (b) {
+                    case "KM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r / 1000;
+                        
+                        jT_Indications.setText("divide el valor de longitud entre 1000");
+                        break;
+                    case "M":
+                        r = Double.parseDouble(Numbrs.getText());
+                        break;
+                    case "CM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 100;
+                        
+                        jT_Indications.setText("multiplica el valor de longitud por 100");
+                        break;
+                    case "MM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 1000;
+                        
+                        jT_Indications.setText("multiplica el valor de longitud por 1000");
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                break;
+            case "CM"://CM
+                switch (b) {
+                    case "KM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r / 100000;
+                        
+                        jT_Indications.setText("divide el valor de longitud entre 100000");
+                        break;
+                    case "M":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r / 100;
+                        
+                        jT_Indications.setText("divide el valor de longitud entre 100");
+                        break;
+                    case "CM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        break;
+                    case "MM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 10;
+                        
+                        jT_Indications.setText("multiplica el valor de longitud por 10");
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                break;
+            case "MM"://MM
+                switch (b) {
+                    case "KM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r / 1000000;
+                        
+                        jT_Indications.setText("divide el valor de longitud entre 1e+6");
+                        break;
+                    case "M":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r * 1000;
+                        
+                        jT_Indications.setText("divide el valor de longitud entre 1000");
+                        break;
+                    case "CM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        r = r / 10;
+                        
+                        jT_Indications.setText("divide el valor de longitud entre 10");
+                        break;
+                    case "MM":
+                        r = Double.parseDouble(Numbrs.getText());
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                break;
+            default:
+                throw new AssertionError();
+        }
+        
+        return r;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -122,16 +268,21 @@ public class ejercicios extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    public static int getRandom(int min, int max){        
+        return (int) (Math.random()*((max-min)+1))+min;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDO;
+    private javax.swing.JLabel Numbrs;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_sig;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jT_Indications;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel medidaDer;
+    private javax.swing.JLabel medidaIzq;
     // End of variables declaration//GEN-END:variables
 }

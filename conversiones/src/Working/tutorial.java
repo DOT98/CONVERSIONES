@@ -96,9 +96,9 @@ public class tutorial extends javax.swing.JFrame {
         getContentPane().add(resConv, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 110, -1));
 
         cmbx_1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "KM", "M", "CM", "MM" }));
+        getContentPane().add(cmbx_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 60, -1));
 
-        getContentPane().add(cmbx_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 50, -1));
-
+        jT_Indications.setEditable(false);
         jT_Indications.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jT_Indications, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, -1));
 
