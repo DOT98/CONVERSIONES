@@ -40,35 +40,30 @@ public class Resultado extends javax.swing.JFrame {
 
         Correctas = new javax.swing.JLabel();
         Incorrectas = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Correctas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Correctas.setForeground(new java.awt.Color(255, 255, 255));
         Correctas.setText("jLabel1");
+        getContentPane().add(Correctas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         Incorrectas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Incorrectas.setForeground(new java.awt.Color(255, 255, 255));
         Incorrectas.setText("jLabel2");
+        getContentPane().add(Incorrectas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(238, 238, 238)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Incorrectas)
-                    .addComponent(Correctas))
-                .addContainerGap(306, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(Correctas)
-                .addGap(49, 49, 49)
-                .addComponent(Incorrectas)
-                .addContainerGap(96, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("¡¡¡FELICIDADES ESTOS SON TUS RESULTADOS!!!");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 450, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Working/Resultado.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 620, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,5 +106,7 @@ public class Resultado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Correctas;
     private javax.swing.JLabel Incorrectas;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
