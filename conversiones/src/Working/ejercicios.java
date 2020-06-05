@@ -18,7 +18,6 @@ public class ejercicios extends javax.swing.JFrame {
     int resIncorrect = 0;
     int contador = 0;
 
-    
     /**
      * Creates new form ejercicios
      */
@@ -26,16 +25,23 @@ public class ejercicios extends javax.swing.JFrame {
         initComponents();
         setValues();
     }
-    
-    public void setValues(){        
-        medidaIzq.setText(""+medidas[getRandom(0,3)]);
-        medidaDer.setText(""+medidas[getRandom(0,3)]);
-        Numbrs.setText(""+getRandom(3, 86));
+
+    public void setValues() {
+        int vl1 = getRandom(0, 3);
+        int vl2 = getRandom(0, 3);
+        while (vl1 == vl2) {
+            System.out.println("Vl1: " + vl1);
+            System.out.println("Vl2: " + vl2);
+            vl2 = getRandom(0, 3);
+        }
+        medidaIzq.setText("" + medidas[vl1]);
+        medidaDer.setText("" + medidas[vl2]);
+        Numbrs.setText("" + getRandom(3, 86));
         contador++;
         double a = getResult();
-        System.out.println("resultado: " +a);
-    }    
-    
+        System.out.println("resultado: " + a);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,27 +124,28 @@ public class ejercicios extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_sigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sigActionPerformed
-        Successes();
-        setValues();
-        System.out.println(getResult());
-        jT_result.setText("");
-        jT_result.requestFocus();
-        
-        
-        
-        if (contador == 5) {
-            Resultado ab = new Resultado(resCorrect, resIncorrect);
-            ab.setResult_ext(resCorrect, resIncorrect);
-            ab.show();
-            this.dispose();
+        if (jT_result.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Ingresa un valor");
+        } else {
+            Successes();
+            setValues();
+            System.out.println(getResult());
+            jT_result.setText("");
+            jT_result.requestFocus();
+
+            if (contador == 5) {
+                Resultado ab = new Resultado(resCorrect, resIncorrect);
+                ab.setResult_ext(resCorrect, resIncorrect);
+                ab.show();
+                this.dispose();
+            }
         }
-        
     }//GEN-LAST:event_btn_sigActionPerformed
-    
-    public double getResult(){
+
+    public double getResult() {
         double r;
         String b = medidaDer.getText();
-        
+
         switch (medidaIzq.getText()) {
             case "KM"://KM
                 switch (b) {
@@ -148,19 +155,19 @@ public class ejercicios extends javax.swing.JFrame {
                     case "M":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 1000;
-                        
+
                         jT_Indications.setText("multiplica el valor de longitud por 1000");
                         break;
                     case "CM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 100000;
-                        
+
                         jT_Indications.setText("multiplica el valor de longitud por 100000");
                         break;
                     case "MM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 1000000;
-                        
+
                         jT_Indications.setText("multiplica el valor de longitud por 1000000");
                         break;
                     default:
@@ -172,7 +179,7 @@ public class ejercicios extends javax.swing.JFrame {
                     case "KM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r / 1000;
-                        
+
                         jT_Indications.setText("divide el valor de longitud entre 1000");
                         break;
                     case "M":
@@ -181,13 +188,13 @@ public class ejercicios extends javax.swing.JFrame {
                     case "CM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 100;
-                        
+
                         jT_Indications.setText("multiplica el valor de longitud por 100");
                         break;
                     case "MM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 1000;
-                        
+
                         jT_Indications.setText("multiplica el valor de longitud por 1000");
                         break;
                     default:
@@ -198,15 +205,15 @@ public class ejercicios extends javax.swing.JFrame {
                 switch (b) {
                     case "KM":
                         r = Double.parseDouble(Numbrs.getText());
-                        
+
                         r = r / 100000;
-                        
+
                         jT_Indications.setText("divide el valor de longitud entre 100000");
                         break;
                     case "M":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r / 100;
-                        
+
                         jT_Indications.setText("divide el valor de longitud entre 100");
                         break;
                     case "CM":
@@ -215,7 +222,7 @@ public class ejercicios extends javax.swing.JFrame {
                     case "MM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 10;
-                        
+
                         jT_Indications.setText("multiplica el valor de longitud por 10");
                         break;
                     default:
@@ -227,19 +234,19 @@ public class ejercicios extends javax.swing.JFrame {
                     case "KM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r / 1000000;
-                        
+
                         jT_Indications.setText("divide el valor de longitud entre 1e+6");
                         break;
                     case "M":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r * 1000;
-                        
+
                         jT_Indications.setText("divide el valor de longitud entre 1000");
                         break;
                     case "CM":
                         r = Double.parseDouble(Numbrs.getText());
                         r = r / 10;
-                        
+
                         jT_Indications.setText("divide el valor de longitud entre 10");
                         break;
                     case "MM":
@@ -252,10 +259,10 @@ public class ejercicios extends javax.swing.JFrame {
             default:
                 throw new AssertionError();
         }
-        
+
         return (double) r;
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -290,23 +297,23 @@ public class ejercicios extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void Successes(){
+
+    public void Successes() {
         double kid_result = Double.parseDouble(jT_result.getText());
-        
+
         if (kid_result == getResult()) {
             resCorrect++;
-            System.out.println("Correctas"+resCorrect);
-        }else if (kid_result != getResult()) {
+            System.out.println("Correctas" + resCorrect);
+        } else if (kid_result != getResult()) {
             resIncorrect++;
-            System.out.println("Incorrectas"+resIncorrect);
+            System.out.println("Incorrectas" + resIncorrect);
         }
     }
-    
-    public static int getRandom(int min, int max){        
-        return (int) (Math.random()*((max-min)+1))+min;
+
+    public static int getRandom(int min, int max) {
+        return (int) (Math.random() * ((max - min) + 1)) + min;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDO;
     private javax.swing.JLabel Numbrs;
