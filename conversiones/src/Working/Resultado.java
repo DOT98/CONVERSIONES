@@ -5,6 +5,8 @@
  */
 package Working;
 
+
+
 /**
  *
  * @author anmijurane <miguel.andres_sic@tesco.edu.mx>
@@ -41,32 +43,64 @@ public class Resultado extends javax.swing.JFrame {
         Correctas = new javax.swing.JLabel();
         Incorrectas = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnInicio = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Correctas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Correctas.setForeground(new java.awt.Color(255, 255, 255));
-        Correctas.setText("jLabel1");
-        getContentPane().add(Correctas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+        Correctas.setText("RESULTADOS: 10");
+        getContentPane().add(Correctas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, -1, -1));
 
         Incorrectas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Incorrectas.setForeground(new java.awt.Color(255, 255, 255));
-        Incorrectas.setText("jLabel2");
-        getContentPane().add(Incorrectas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
+        Incorrectas.setText("RESULTADOS: 10");
+        getContentPane().add(Incorrectas, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("¡¡¡FELICIDADES ESTOS SON TUS RESULTADOS!!!");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 450, -1));
 
+        btnInicio.setBackground(new java.awt.Color(0, 64, 11));
+        btnInicio.setText("INICIO");
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+
+        btnSalir.setBackground(new java.awt.Color(0, 64, 11));
+        btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Working/Resultado.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 620, 510));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+        inicio ini = new inicio();
+        ini.show();
+        this.dispose();
+    }//GEN-LAST:event_btnInicioActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,6 +140,8 @@ public class Resultado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Correctas;
     private javax.swing.JLabel Incorrectas;
+    private javax.swing.JButton btnInicio;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
