@@ -27,11 +27,13 @@ public class ejercicios extends javax.swing.JFrame {
         setValues();
     }
     
-    public void setValues(){               
+    public void setValues(){        
         medidaIzq.setText(""+medidas[getRandom(0,3)]);
         medidaDer.setText(""+medidas[getRandom(0,3)]);
         Numbrs.setText(""+getRandom(3, 86));
         contador++;
+        double a = getResult();
+        System.out.println("resultado: " +a);
     }    
     
     /**
@@ -116,8 +118,8 @@ public class ejercicios extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_sigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sigActionPerformed
-        setValues();
         Successes();
+        setValues();
         System.out.println(getResult());
         jT_result.setText("");
         jT_result.requestFocus();
@@ -196,6 +198,7 @@ public class ejercicios extends javax.swing.JFrame {
                 switch (b) {
                     case "KM":
                         r = Double.parseDouble(Numbrs.getText());
+                        
                         r = r / 100000;
                         
                         jT_Indications.setText("divide el valor de longitud entre 100000");
@@ -250,7 +253,7 @@ public class ejercicios extends javax.swing.JFrame {
                 throw new AssertionError();
         }
         
-        return r;
+        return (double) r;
     }
     
     /**
@@ -293,8 +296,10 @@ public class ejercicios extends javax.swing.JFrame {
         
         if (kid_result == getResult()) {
             resCorrect++;
+            System.out.println("Correctas"+resCorrect);
         }else if (kid_result != getResult()) {
             resIncorrect++;
+            System.out.println("Incorrectas"+resIncorrect);
         }
     }
     
